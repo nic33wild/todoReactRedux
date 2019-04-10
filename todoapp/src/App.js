@@ -3,13 +3,19 @@ import Todos from './Todos';
 import AddForm from './AddForm';
 
 class App extends Component {
-
-  state = {
-    todos: [
-      {id: 1, content: 'practice Redux'},
-      {id: 2, content: 'have fun'}
-    ]
+  
+  constructor(props){
+    super(props)
+    this.state = {
+      todos: [
+        {id: 1, content: 'Practice React and Redux'},
+        {id: 2, content: 'Have fun'}
+      ]
+    }
+    this.deleteTodo = this.deleteTodo.bind(this);
+    this.addTodo = this.addTodo.bind(this);
   }
+  
 
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
@@ -33,10 +39,10 @@ class App extends Component {
     return (
       <div className="todo-app container">
         <h1 className="center blue-text">
-          Todo's
+          Checklist
         </h1>
-        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
         <AddForm addTodo={this.addTodo} />
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
   }

@@ -6,12 +6,14 @@ const Todos = ({todos, deleteTodo}) => {
         todos.map(todo => {
             return (
                 <div className="colletion-item" key={todo.id}>
-                    <span onClick={ () => {deleteTodo(todo.id)} }>{todo.content}</span>
+                    
+                    <p onClick={ () => {deleteTodo(todo.id)} }>{todo.content}</p>
+                    
                 </div>
             )
         })
     ) : (
-        <p className="center">You have no todo's left. Good job!</p>
+        <p className="center">Your checklist is empty. Good job!</p>
     )
 
     return (
