@@ -17,7 +17,6 @@ export default class AddForm extends Component {
         this.setState({
             content: ''
         })
-
     }
 
   render() {
